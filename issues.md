@@ -19,3 +19,18 @@ This document tracks and cross-references all issues detected by **Bandit**, **F
 | **R1705: Unnecessary else after return** | Pylint | Refactor / Quality | 28 | `averageRating` uses `else:` block immediately after an explicit `return`. | Removed the redundant `else:` block and de-indented the fallback `return 0.0`. |
 | **C0200: Unidiomatic loop indexing** | Pylint | Refactor / Quality | 50 | `printAllReviews` iterates using `range(len(titles))` instead of standard iteration. | Replaced index-based range loop with Pythonic `enumerate(titles, start=1)`. |
 | **W0603: Global statement usage** | Pylint | Quality / Design | 40 | `pickFeatured()` relies on `global featured` mutation. | Removed global mutation and returned the selected movie directly from `pick_featured()`. |
+
+---
+
+## Visual Verification & Terminal Screenshots
+
+Visual evidence capturing the terminal execution before and after resolving the issues documented above:
+
+- **Initial Script Execution:** [`screenshots/01_original_run.png`](./screenshots/01_original_run.png)
+- **Pylint Analysis (Before):** [`screenshots/02_pylint_before.png`](./screenshots/02_pylint_before.png)
+- **Bandit Security Audit (Before):** [`screenshots/03_bandit_before.png`](./screenshots/03_bandit_before.png)
+- **Flake8 Style Check (Before):** [`screenshots/04_flake8_before.png`](./screenshots/04_flake8_before.png)
+- **Flake8 Verification (After):** [`screenshots/05_flake8_after.png`](./screenshots/05_flake8_after.png)
+- **Bandit Security Verification (After):** [`screenshots/06_bandit_after.png`](./screenshots/06_bandit_after.png)
+- **Pylint Score 10.00/10 (After):** [`screenshots/07_pylint_after.png`](./screenshots/07_pylint_after.png)
+- **Final Clean Run:** [`screenshots/08_final_run.png`](./screenshots/08_final_run.png)
